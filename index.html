@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<div class="wrap">
+<h1 id="player"><center>Calculater</center></h1>
+<div class="screen">
+	<div id="result">0</div>
+</div>
+<div class="container">
+	<div id="buttons">
+		<li onclick="getNum(1)">1</li>
+		<li onclick="getNum(2)">2</li>
+		<li onclick="getNum(3)">3</li>
+		<li onclick="getNum(4)">4</li>
+		<li onclick="getNum(5)">5</li>
+		<li onclick="getNum(6)">6</li>
+		<li onclick="getNum('+')">+</li>
+		<li onclick="getNum(7)">7</li>
+		<li onclick="getNum(8)">8</li>
+		<li onclick="getNum(9)">9</li>
+		<li onclick="getNum('-')">-</li>
+		<li onclick="getNum(0)">0</li>
+		<li onclick="getNum('*')">*</li>
+		<li onclick="getNum('.')">.</li>
+		<li onclick="getNum('+')">+</li>
+		<li onclick="clearNum()">C</li>
+		<li onclick="clearNum()">AC</li>
+		<li id="equals" onclick="calculate()">=</li>
+	</div>
+</div>
+</div>
+<script>
+	document.getElementById("equals").addEventListener('click', calculate);
+	function getNum(num){
+		var result = document.getElementById("result").innerText +=  num
+	}
+	function clearNum(){
+		var result = document.getElementById("result").innerText= ""
+	}
+	function calculate(){
+		var calc = document.getElementById("result");
+		calc.innerHTML = eval(calc.innerHTML);
+	}
+	
+</script>
+
+
+<style>
+div#result {
+    text-align: center;
+    background: indianred;
+    font-size: 41px;
+    padding: 20px;
+    border: 3px solid yellow;
+	overflow: hidden;
+	height: 33px;
+}
+div#buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+div#buttons li {
+    background: #eee;
+    height: 30px;
+    width: 30px;
+    list-style: none;
+    border-radius: 50%;
+    text-align: center;
+    margin: 5px;
+    font-size: 22px;
+    padding: 20px;
+    cursor: pointer;
+}
+.wrap {
+    max-width: 251px;
+    margin: 0 auto;
+}
+</style>
+</body>
+</html
